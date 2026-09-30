@@ -1,0 +1,22 @@
+{
+	"schemaVersion": 1,
+	"id": "fantasy_armor",
+	"version": "${version}",
+	"name": "Fantasy Armor",
+	"description": "Adds the Fantasy Armor set.",
+	"authors": [
+		"kierbob"
+	],
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.kierbob.fantasyarmor.FantasyArmor"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

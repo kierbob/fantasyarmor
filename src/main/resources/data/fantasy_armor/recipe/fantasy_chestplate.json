@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": "minecraft:amethyst_shard",
+    "D": "minecraft:diamond"
+  },
+  "pattern": [
+    "D D",
+    "DAD",
+    "DAD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "fantasy_armor:fantasy_chestplate"
+  }
+}
