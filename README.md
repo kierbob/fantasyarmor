@@ -1,7 +1,7 @@
 # Fantasy Armor
 
 A Fabric mod for Minecraft **26.3** that adds a Fantasy Armor set. For now the
-set has the same stats as diamond armor, with diamond textures and glowing purple lightning bolts.
+set has the same stats as diamond armor, with diamond textures and a glowing purple stripe.
 
 ## Recipes
 
@@ -25,12 +25,12 @@ from the run's **Artifacts**.
 
 ## Textures
 
-The textures are vanilla diamond with purple Lichtenberg ("lightning tattoo") bolts drawn in.
-The purple bolts glow: they're drawn a second time at full brightness, so they stay lit in the dark.
+The textures are vanilla diamond with a purple stripe down the middle of each piece.
+The stripe glows: it's drawn a second time at full brightness, so it stays lit in the dark.
 
 - Inventory icons: `src/main/resources/assets/fantasy_armor/textures/item/fantasy_*.png` (16x16)
 - Worn helmet, chestplate and boots: `assets/fantasy_armor/textures/entity/equipment/humanoid/fantasy.png` (64x32)
-- Glow layer: `.../humanoid/fantasy_glow.png`, the same layout but containing only the bolts
+- Glow layer: `.../humanoid/fantasy_glow.png`, the same layout but containing only the stripe
   (everything else transparent). Whatever is drawn here glows.
 - Worn leggings still use the vanilla diamond texture and don't glow yet.
 
