@@ -28,7 +28,7 @@ public class FantasyArmorClient implements ClientModInitializer {
 	private static final ModelLayerLocation CHESTPLATE_LAYER = layer("chestplate");
 	private static final ModelLayerLocation LEGGINGS_LAYER = layer("leggings");
 	private static final ModelLayerLocation BOOTS_LAYER = layer("boots");
-	// A second, slimmer set; only its boots are used, so the ankle-high boots sit as close to the leg as the leggings.
+	// A second set used only for the boots: ankle-high, a little bigger than the leggings like vanilla boots.
 	private static final ArmorModelSet<ModelLayerLocation> SLIM_LAYERS = new ArmorModelSet<>("helmet", "chestplate", "leggings", "boots")
 			.map(slot -> new ModelLayerLocation(FantasyArmor.id("fantasy_armor_slim"), slot));
 	private static final ModelLayerLocation SLIM_BOOTS_LAYER = new ModelLayerLocation(FantasyArmor.id("fantasy_armor_slim"), "boots");
@@ -42,10 +42,10 @@ public class FantasyArmorClient implements ClientModInitializer {
 				() -> HumanoidModel.createArmorMeshSet(new CubeDeformation(0.3F), new CubeDeformation(0.6F))
 						.map(mesh -> LayerDefinition.create(mesh, 64, 32))
 		);
-		// The boots only cover the ankles and the leggings stop above them, so both can use the slim size without overlapping.
+		// The leggings stop above the boots, so the boots can sit just outside them (0.45) without overlapping.
 		ModelLayerRegistry.registerArmorModelLayers(
 				SLIM_LAYERS,
-				() -> HumanoidModel.createArmorMeshSet(new CubeDeformation(0.3F), new CubeDeformation(0.3F))
+				() -> HumanoidModel.createArmorMeshSet(new CubeDeformation(0.3F), new CubeDeformation(0.45F))
 						.map(mesh -> LayerDefinition.create(mesh, 64, 32))
 		);
 		ModelLayerRegistry.registerModelLayer(GreatHelmModel.LAYER, GreatHelmModel::createLayer);
