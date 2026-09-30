@@ -12,7 +12,7 @@
     ],
     "humanoid_leggings": [
       {
-        "texture": "minecraft:diamond"
+        "texture": "fantasy_armor:fantasy"
       }
     ]
   }

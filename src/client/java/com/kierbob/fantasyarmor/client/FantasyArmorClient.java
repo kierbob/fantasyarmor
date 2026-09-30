@@ -15,11 +15,11 @@ import com.kierbob.fantasyarmor.FantasyArmor;
 import com.kierbob.fantasyarmor.item.ModItems;
 
 public class FantasyArmorClient implements ClientModInitializer {
-	// Worn textures. The glow texture holds only the lightning, which is drawn again at full brightness.
+	// Worn textures. The glow textures hold only the purple stripe, which is drawn again at full brightness.
 	private static final Identifier ARMOR_TEXTURE = FantasyArmor.id("textures/entity/equipment/humanoid/fantasy.png");
 	private static final Identifier ARMOR_GLOW_TEXTURE = FantasyArmor.id("textures/entity/equipment/humanoid/fantasy_glow.png");
-	// No leggings texture yet, so the leggings use vanilla diamond and have nothing to glow.
-	private static final Identifier LEGGINGS_TEXTURE = Identifier.withDefaultNamespace("textures/entity/equipment/humanoid_leggings/diamond.png");
+	private static final Identifier LEGGINGS_TEXTURE = FantasyArmor.id("textures/entity/equipment/humanoid_leggings/fantasy.png");
+	private static final Identifier LEGGINGS_GLOW_TEXTURE = FantasyArmor.id("textures/entity/equipment/humanoid_leggings/fantasy_glow.png");
 
 	// Our own copy of the vanilla armor model, one layer per slot.
 	private static final ModelLayerLocation HELMET_LAYER = layer("helmet");
@@ -38,7 +38,7 @@ public class FantasyArmorClient implements ClientModInitializer {
 
 		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, HELMET_LAYER, ARMOR_TEXTURE, ARMOR_GLOW_TEXTURE), ModItems.FANTASY_HELMET);
 		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, CHESTPLATE_LAYER, ARMOR_TEXTURE, ARMOR_GLOW_TEXTURE), ModItems.FANTASY_CHESTPLATE);
-		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, LEGGINGS_LAYER, LEGGINGS_TEXTURE, null), ModItems.FANTASY_LEGGINGS);
+		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, LEGGINGS_LAYER, LEGGINGS_TEXTURE, LEGGINGS_GLOW_TEXTURE), ModItems.FANTASY_LEGGINGS);
 		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, BOOTS_LAYER, ARMOR_TEXTURE, ARMOR_GLOW_TEXTURE), ModItems.FANTASY_BOOTS);
 	}
 

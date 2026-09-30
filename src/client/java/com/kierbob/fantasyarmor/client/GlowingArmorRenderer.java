@@ -19,7 +19,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
 
 /**
  * Draws the armor like vanilla does, then draws the glow texture over it at full brightness,
- * so the lightning stays lit even in the dark.
+ * so the purple stays lit even in the dark.
  */
 public record GlowingArmorRenderer(HumanoidModel<HumanoidRenderState> model, Identifier texture, @Nullable Identifier glowTexture) implements ArmorRenderer {
 	public GlowingArmorRenderer(EntityRendererProvider.Context context, ModelLayerLocation layer, Identifier texture, @Nullable Identifier glowTexture) {
@@ -37,7 +37,7 @@ public record GlowingArmorRenderer(HumanoidModel<HumanoidRenderState> model, Ide
 					poseStack, RenderTypes.armorCutoutNoCullGlint(this.texture), light, OverlayTexture.NO_OVERLAY, 0);
 		}
 
-		// The lightning, drawn on top at full brightness. Transparent pixels in the glow texture are skipped.
+		// The glowing purple, drawn on top at full brightness. Transparent pixels in the glow texture are skipped.
 		if (this.glowTexture != null) {
 			ArmorRenderer.submitTransformCopyingModel(contextModel, state, this.model, state, false, submitNodeCollector.order(1),
 					poseStack, RenderTypes.armorCutoutNoCull(this.glowTexture), LightCoordsUtil.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, 0);
