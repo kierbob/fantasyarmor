@@ -31,7 +31,7 @@ brightness, so they stay lit in the dark.
 - Worn helmet: a custom 3D great helm model (`src/client/java/com/kierbob/fantasyarmor/client/GreatHelmModel.java`)
   with its own 64x64 texture, `assets/fantasy_armor/textures/entity/great_helm.png`. The eye slit glows.
 - Worn chestplate and boots: `assets/fantasy_armor/textures/entity/equipment/humanoid/fantasy.png` (64x32).
-  The gem in the breastplate glows.
+  The gem in the breastplate glows. Arms: shoulder pauldrons and forearm bracers; boots are ankle-high.
 - Worn leggings: `.../humanoid_leggings/fantasy.png`. The knee gems glow.
 - Each worn texture has a `_glow.png` twin with the same layout, containing only the glowing pixels
   (everything else transparent). Whatever is drawn there glows.

@@ -28,6 +28,10 @@ public class FantasyArmorClient implements ClientModInitializer {
 	private static final ModelLayerLocation CHESTPLATE_LAYER = layer("chestplate");
 	private static final ModelLayerLocation LEGGINGS_LAYER = layer("leggings");
 	private static final ModelLayerLocation BOOTS_LAYER = layer("boots");
+	// A second, slimmer set; only its boots are used, so the ankle-high boots sit as close to the leg as the leggings.
+	private static final ArmorModelSet<ModelLayerLocation> SLIM_LAYERS = new ArmorModelSet<>("helmet", "chestplate", "leggings", "boots")
+			.map(slot -> new ModelLayerLocation(FantasyArmor.id("fantasy_armor_slim"), slot));
+	private static final ModelLayerLocation SLIM_BOOTS_LAYER = new ModelLayerLocation(FantasyArmor.id("fantasy_armor_slim"), "boots");
 
 	@Override
 	public void onInitializeClient() {
@@ -35,7 +39,13 @@ public class FantasyArmorClient implements ClientModInitializer {
 		// Kept above the skin's outer layer (0.25 on the body, arms and legs) so the skin doesn't poke through.
 		ModelLayerRegistry.registerArmorModelLayers(
 				new ArmorModelSet<>(HELMET_LAYER, CHESTPLATE_LAYER, LEGGINGS_LAYER, BOOTS_LAYER),
-				() -> HumanoidModel.createArmorMeshSet(new CubeDeformation(0.35F), new CubeDeformation(0.6F))
+				() -> HumanoidModel.createArmorMeshSet(new CubeDeformation(0.3F), new CubeDeformation(0.6F))
+						.map(mesh -> LayerDefinition.create(mesh, 64, 32))
+		);
+		// The boots only cover the ankles and the leggings stop above them, so both can use the slim size without overlapping.
+		ModelLayerRegistry.registerArmorModelLayers(
+				SLIM_LAYERS,
+				() -> HumanoidModel.createArmorMeshSet(new CubeDeformation(0.3F), new CubeDeformation(0.3F))
 						.map(mesh -> LayerDefinition.create(mesh, 64, 32))
 		);
 		ModelLayerRegistry.registerModelLayer(GreatHelmModel.LAYER, GreatHelmModel::createLayer);
@@ -44,7 +54,7 @@ public class FantasyArmorClient implements ClientModInitializer {
 		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, GreatHelmModel.LAYER, GREAT_HELM_TEXTURE, GREAT_HELM_GLOW_TEXTURE), ModItems.FANTASY_HELMET);
 		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, CHESTPLATE_LAYER, ARMOR_TEXTURE, ARMOR_GLOW_TEXTURE), ModItems.FANTASY_CHESTPLATE);
 		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, LEGGINGS_LAYER, LEGGINGS_TEXTURE, LEGGINGS_GLOW_TEXTURE), ModItems.FANTASY_LEGGINGS);
-		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, BOOTS_LAYER, ARMOR_TEXTURE, ARMOR_GLOW_TEXTURE), ModItems.FANTASY_BOOTS);
+		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, SLIM_BOOTS_LAYER, ARMOR_TEXTURE, ARMOR_GLOW_TEXTURE), ModItems.FANTASY_BOOTS);
 	}
 
 	private static ModelLayerLocation layer(String slot) {
