@@ -31,10 +31,11 @@ public class FantasyArmorClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-		// Same shapes and sizes vanilla uses for armor: 0.5 inflation for leggings, 1.0 for the rest.
+		// Vanilla armor shapes, but closer to the body than vanilla's 0.5 (leggings) / 1.0 (everything else).
+		// Kept above the skin's outer layer (0.25 on the body, arms and legs) so the skin doesn't poke through.
 		ModelLayerRegistry.registerArmorModelLayers(
 				new ArmorModelSet<>(HELMET_LAYER, CHESTPLATE_LAYER, LEGGINGS_LAYER, BOOTS_LAYER),
-				() -> HumanoidModel.createArmorMeshSet(new CubeDeformation(0.5F), new CubeDeformation(1.0F))
+				() -> HumanoidModel.createArmorMeshSet(new CubeDeformation(0.35F), new CubeDeformation(0.6F))
 						.map(mesh -> LayerDefinition.create(mesh, 64, 32))
 		);
 		ModelLayerRegistry.registerModelLayer(GreatHelmModel.LAYER, GreatHelmModel::createLayer);
