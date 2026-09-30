@@ -18,6 +18,8 @@ public class FantasyArmorClient implements ClientModInitializer {
 	// Worn textures. The glow textures hold only the purple stripe, which is drawn again at full brightness.
 	private static final Identifier ARMOR_TEXTURE = FantasyArmor.id("textures/entity/equipment/humanoid/fantasy.png");
 	private static final Identifier ARMOR_GLOW_TEXTURE = FantasyArmor.id("textures/entity/equipment/humanoid/fantasy_glow.png");
+	private static final Identifier GREAT_HELM_TEXTURE = FantasyArmor.id("textures/entity/great_helm.png");
+	private static final Identifier GREAT_HELM_GLOW_TEXTURE = FantasyArmor.id("textures/entity/great_helm_glow.png");
 	private static final Identifier LEGGINGS_TEXTURE = FantasyArmor.id("textures/entity/equipment/humanoid_leggings/fantasy.png");
 	private static final Identifier LEGGINGS_GLOW_TEXTURE = FantasyArmor.id("textures/entity/equipment/humanoid_leggings/fantasy_glow.png");
 
@@ -35,8 +37,10 @@ public class FantasyArmorClient implements ClientModInitializer {
 				() -> HumanoidModel.createArmorMeshSet(new CubeDeformation(0.5F), new CubeDeformation(1.0F))
 						.map(mesh -> LayerDefinition.create(mesh, 64, 32))
 		);
+		ModelLayerRegistry.registerModelLayer(GreatHelmModel.LAYER, GreatHelmModel::createLayer);
 
-		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, HELMET_LAYER, ARMOR_TEXTURE, ARMOR_GLOW_TEXTURE), ModItems.FANTASY_HELMET);
+		// The helmet is a custom great helm model instead of the vanilla helmet shape.
+		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, GreatHelmModel.LAYER, GREAT_HELM_TEXTURE, GREAT_HELM_GLOW_TEXTURE), ModItems.FANTASY_HELMET);
 		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, CHESTPLATE_LAYER, ARMOR_TEXTURE, ARMOR_GLOW_TEXTURE), ModItems.FANTASY_CHESTPLATE);
 		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, LEGGINGS_LAYER, LEGGINGS_TEXTURE, LEGGINGS_GLOW_TEXTURE), ModItems.FANTASY_LEGGINGS);
 		ArmorRenderer.register(context -> new GlowingArmorRenderer(context, BOOTS_LAYER, ARMOR_TEXTURE, ARMOR_GLOW_TEXTURE), ModItems.FANTASY_BOOTS);

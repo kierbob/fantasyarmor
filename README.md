@@ -29,7 +29,9 @@ The textures are diamond armor recolored to midnight blue, with a purple stripe 
 The stripe glows: it's drawn a second time at full brightness, so it stays lit in the dark.
 
 - Inventory icons: `src/main/resources/assets/fantasy_armor/textures/item/fantasy_*.png` (16x16)
-- Worn helmet, chestplate and boots: `assets/fantasy_armor/textures/entity/equipment/humanoid/fantasy.png` (64x32)
+- Worn helmet: a custom 3D great helm model (`src/client/java/com/kierbob/fantasyarmor/client/GreatHelmModel.java`)
+  with its own 64x64 texture, `assets/fantasy_armor/textures/entity/great_helm.png`, and glow texture `great_helm_glow.png`
+- Worn chestplate and boots: `assets/fantasy_armor/textures/entity/equipment/humanoid/fantasy.png` (64x32)
 - Glow layer: `.../humanoid/fantasy_glow.png`, the same layout but containing only the stripe
   (everything else transparent). Whatever is drawn here glows.
 - Worn leggings: `.../humanoid_leggings/fantasy.png` and `fantasy_glow.png`, the same idea for the leggings layer.
