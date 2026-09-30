@@ -2,12 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "A": "minecraft:amethyst_shard",
-    "D": "minecraft:diamond"
+    "C": "minecraft:copper_ingot",
+    "D": "minecraft:diamond",
+    "I": "minecraft:iron_ingot"
   },
   "pattern": [
-    "DAD",
-    "D D"
+    "IDI",
+    "C C"
   ],
   "result": {
     "count": 1,

@@ -24,11 +24,11 @@ public final class GreatHelmModel {
 		PartDefinition head = root.addOrReplaceChild(PartNames.HEAD, CubeListBuilder.create()
 				// the bucket: fits closely around the head, a little slimmer than a vanilla helmet
 				.texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.6F))
-				// flat top plate with a slight lip, riveted around the edge
+				// brass top plate with a slight lip, riveted around the edge
 				.texOffs(0, 16).addBox(-5.0F, -9.1F, -5.0F, 10.0F, 1.0F, 10.0F)
-				// brow plate above the V-shaped eye slit
+				// brass brow plate above the glowing V-shaped eye slit
 				.texOffs(0, 27).addBox(-5.0F, -7.3F, -5.0F, 10.0F, 1.0F, 1.0F)
-				// glowing bar: up the face, over the top and down the back
+				// brass bar up the face, over the top and down the back (a cross with the brow)
 				.texOffs(0, 29).addBox(-1.0F, -9.6F, -5.0F, 2.0F, 1.0F, 10.0F)
 				.texOffs(48, 0).addBox(-1.0F, -9.4F, -5.2F, 2.0F, 10.0F, 1.0F)
 				.texOffs(54, 0).addBox(-1.0F, -9.4F, 4.2F, 2.0F, 10.0F, 1.0F),

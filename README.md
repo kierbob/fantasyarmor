@@ -1,15 +1,15 @@
 # Fantasy Armor
 
-A Fabric mod for Minecraft **26.3** that adds a Fantasy Armor set. For now the
-set has the same stats as diamond armor, with midnight-blue textures and a glowing purple stripe.
+A Fabric mod for Minecraft **26.3** that adds a Fantasy Armor set: polished steel plate with brass trim,
+a 3D great helm, and small icy-blue glowing accents. Protection and durability match diamond armor.
 
 ## Recipes
 
-`D` = diamond, `A` = amethyst shard
+`I` = iron ingot, `C` = copper ingot, `D` = diamond
 
 | Helmet | Chestplate | Leggings | Boots |
 |--------|------------|----------|-------|
-| `DAD`<br>`D D` | `D D`<br>`DAD`<br>`DAD` | `DAD`<br>`D D`<br>`D D` | `A A`<br>`D D` |
+| `IDI`<br>`C C` | `C C`<br>`IDI`<br>`III` | `ICI`<br>`D D`<br>`I I` | `C C`<br>`I I` |
 
 ## Building
 
@@ -25,16 +25,17 @@ from the run's **Artifacts**.
 
 ## Textures
 
-The textures are diamond armor recolored to midnight blue, with a purple stripe down the middle of each piece.
-The stripe glows: it's drawn a second time at full brightness, so it stays lit in the dark.
+Polished steel with brass trim. A few details glow icy blue: they are drawn a second time at full
+brightness, so they stay lit in the dark.
 
-- Inventory icons: `src/main/resources/assets/fantasy_armor/textures/item/fantasy_*.png` (16x16)
 - Worn helmet: a custom 3D great helm model (`src/client/java/com/kierbob/fantasyarmor/client/GreatHelmModel.java`)
-  with its own 64x64 texture, `assets/fantasy_armor/textures/entity/great_helm.png`, and glow texture `great_helm_glow.png`
-- Worn chestplate and boots: `assets/fantasy_armor/textures/entity/equipment/humanoid/fantasy.png` (64x32)
-- Glow layer: `.../humanoid/fantasy_glow.png`, the same layout but containing only the stripe
-  (everything else transparent). Whatever is drawn here glows.
-- Worn leggings: `.../humanoid_leggings/fantasy.png` and `fantasy_glow.png`, the same idea for the leggings layer.
+  with its own 64x64 texture, `assets/fantasy_armor/textures/entity/great_helm.png`. The eye slit glows.
+- Worn chestplate and boots: `assets/fantasy_armor/textures/entity/equipment/humanoid/fantasy.png` (64x32).
+  The gem in the breastplate glows.
+- Worn leggings: `.../humanoid_leggings/fantasy.png`. The knee gems glow.
+- Each worn texture has a `_glow.png` twin with the same layout, containing only the glowing pixels
+  (everything else transparent). Whatever is drawn there glows.
+- Inventory icons: `assets/fantasy_armor/textures/item/fantasy_*.png` (16x16)
 
 Worn armor is drawn by `src/client/java/com/kierbob/fantasyarmor/client/GlowingArmorRenderer.java`.
 To change a texture, edit the PNG in place and keep the same size and layout.

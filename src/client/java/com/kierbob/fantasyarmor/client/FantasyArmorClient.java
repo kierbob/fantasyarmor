@@ -15,7 +15,7 @@ import com.kierbob.fantasyarmor.FantasyArmor;
 import com.kierbob.fantasyarmor.item.ModItems;
 
 public class FantasyArmorClient implements ClientModInitializer {
-	// Worn textures. The glow textures hold only the purple stripe, which is drawn again at full brightness.
+	// Worn textures. Each glow texture holds only the glowing details (gems, eye slit), which are drawn again at full brightness.
 	private static final Identifier ARMOR_TEXTURE = FantasyArmor.id("textures/entity/equipment/humanoid/fantasy.png");
 	private static final Identifier ARMOR_GLOW_TEXTURE = FantasyArmor.id("textures/entity/equipment/humanoid/fantasy_glow.png");
 	private static final Identifier GREAT_HELM_TEXTURE = FantasyArmor.id("textures/entity/great_helm.png");
