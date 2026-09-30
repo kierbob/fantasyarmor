@@ -7,6 +7,17 @@ repositories {
 	// Add other mavens here only if you depend on other mods.
 }
 
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"fantasy_armor" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"

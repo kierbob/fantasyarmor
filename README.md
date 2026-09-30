@@ -1,7 +1,7 @@
 # Fantasy Armor
 
 A Fabric mod for Minecraft **26.3** that adds a Fantasy Armor set. For now the
-set has the same stats as diamond armor, with diamond textures cracked by glowing amethyst.
+set has the same stats as diamond armor, with diamond textures and glowing purple lightning bolts.
 
 ## Recipes
 
@@ -25,14 +25,16 @@ from the run's **Artifacts**.
 
 ## Textures
 
-The textures are vanilla diamond with glowing amethyst cracks drawn in:
+The textures are vanilla diamond with purple Lichtenberg ("lightning tattoo") bolts drawn in.
+The purple bolts glow: they're drawn a second time at full brightness, so they stay lit in the dark.
 
 - Inventory icons: `src/main/resources/assets/fantasy_armor/textures/item/fantasy_*.png` (16x16)
 - Worn helmet, chestplate and boots: `assets/fantasy_armor/textures/entity/equipment/humanoid/fantasy.png` (64x32)
-- Worn leggings and armor on baby mobs still use the vanilla diamond texture. To replace them, add
-  `fantasy.png` under `textures/entity/equipment/humanoid_leggings/` (and `humanoid_baby/`), then change
-  that layer's `minecraft:diamond` to `fantasy_armor:fantasy` in `assets/fantasy_armor/equipment/fantasy.json`.
+- Glow layer: `.../humanoid/fantasy_glow.png`, the same layout but containing only the bolts
+  (everything else transparent). Whatever is drawn here glows.
+- Worn leggings still use the vanilla diamond texture and don't glow yet.
 
+Worn armor is drawn by `src/client/java/com/kierbob/fantasyarmor/client/GlowingArmorRenderer.java`.
 To change a texture, edit the PNG in place and keep the same size and layout.
 
 Stats live in `src/main/java/com/kierbob/fantasyarmor/item/FantasyArmorMaterial.java`.

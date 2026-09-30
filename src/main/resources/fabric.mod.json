@@ -11,6 +11,9 @@
 	"entrypoints": {
 		"main": [
 			"com.kierbob.fantasyarmor.FantasyArmor"
+		],
+		"client": [
+			"com.kierbob.fantasyarmor.client.FantasyArmorClient"
 		]
 	},
 	"depends": {
