@@ -22,16 +22,16 @@ public final class GreatHelmModel {
 		MeshDefinition mesh = new MeshDefinition();
 		PartDefinition root = mesh.getRoot();
 		PartDefinition head = root.addOrReplaceChild(PartNames.HEAD, CubeListBuilder.create()
-				// the bucket: a little taller than the vanilla helmet
-				.texOffs(0, 0).addBox(-4.0F, -9.0F, -4.0F, 8.0F, 9.0F, 8.0F, new CubeDeformation(1.0F))
-				// flat top plate with a lip, riveted around the edge
-				.texOffs(0, 17).addBox(-5.5F, -10.5F, -5.5F, 11.0F, 1.0F, 11.0F)
-				// brow plate above the eye slit
-				.texOffs(0, 29).addBox(-5.5F, -7.0F, -5.5F, 11.0F, 1.0F, 1.0F)
+				// the bucket: fits closely around the head, a little slimmer than a vanilla helmet
+				.texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.6F))
+				// flat top plate with a slight lip, riveted around the edge
+				.texOffs(0, 16).addBox(-5.0F, -9.1F, -5.0F, 10.0F, 1.0F, 10.0F)
+				// brow plate above the V-shaped eye slit
+				.texOffs(0, 27).addBox(-5.0F, -7.3F, -5.0F, 10.0F, 1.0F, 1.0F)
 				// glowing bar: up the face, over the top and down the back
-				.texOffs(0, 31).addBox(-1.0F, -11.0F, -6.0F, 2.0F, 1.0F, 12.0F)
-				.texOffs(48, 0).addBox(-1.0F, -10.0F, -6.0F, 2.0F, 11.0F, 1.0F)
-				.texOffs(54, 0).addBox(-1.0F, -10.0F, 5.0F, 2.0F, 11.0F, 1.0F),
+				.texOffs(0, 29).addBox(-1.0F, -9.6F, -5.0F, 2.0F, 1.0F, 10.0F)
+				.texOffs(48, 0).addBox(-1.0F, -9.4F, -5.2F, 2.0F, 10.0F, 1.0F)
+				.texOffs(54, 0).addBox(-1.0F, -9.4F, 4.2F, 2.0F, 10.0F, 1.0F),
 				PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		// HumanoidModel expects the rest of the body to exist; leave those parts empty.
