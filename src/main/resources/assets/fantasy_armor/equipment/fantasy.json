@@ -2,7 +2,7 @@
   "layers": {
     "humanoid": [
       {
-        "texture": "minecraft:diamond"
+        "texture": "fantasy_armor:fantasy"
       }
     ],
     "humanoid_baby": [

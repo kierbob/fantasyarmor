@@ -1,7 +1,7 @@
 # Fantasy Armor
 
 A Fabric mod for Minecraft **26.3** that adds a Fantasy Armor set. For now the
-set is a straight copy of diamond armor: the same stats and the same textures.
+set has the same stats as diamond armor, with amethyst-purple textures.
 
 ## Recipes
 
@@ -23,22 +23,16 @@ The mod jar ends up in `build/libs/`. Put it in your `mods` folder along with
 Fabric API. Every push also builds on GitHub Actions; the jar can be downloaded
 from the run's **Artifacts**.
 
-## Adding custom textures
+## Textures
 
-Right now everything points at vanilla diamond textures. To use your own:
+The textures are vanilla diamond, recolored to amethyst purple:
 
-1. **Inventory icons:** add 16x16 PNGs to
-   `src/main/resources/assets/fantasy_armor/textures/item/` (e.g. `fantasy_helmet.png`).
-   Then add item models in `assets/fantasy_armor/models/item/`, e.g. `fantasy_helmet.json`:
-   ```json
-   { "parent": "minecraft:item/generated", "textures": { "layer0": "fantasy_armor:item/fantasy_helmet" } }
-   ```
-   Finally, in `assets/fantasy_armor/items/fantasy_helmet.json`, change
-   `minecraft:item/diamond_helmet` to `fantasy_armor:item/fantasy_helmet`.
-2. **Worn armor:** add `fantasy.png` to
-   `assets/fantasy_armor/textures/entity/equipment/humanoid/`, `humanoid_leggings/`
-   and `humanoid_baby/`, then change `minecraft:diamond` to `fantasy_armor:fantasy`
-   in `assets/fantasy_armor/equipment/fantasy.json`. (Copying the vanilla diamond
-   PNGs is a good starting template.)
+- Inventory icons: `src/main/resources/assets/fantasy_armor/textures/item/fantasy_*.png` (16x16)
+- Worn helmet, chestplate and boots: `assets/fantasy_armor/textures/entity/equipment/humanoid/fantasy.png` (64x32)
+- Worn leggings and armor on baby mobs still use the vanilla diamond texture. To replace them, add
+  `fantasy.png` under `textures/entity/equipment/humanoid_leggings/` (and `humanoid_baby/`), then change
+  that layer's `minecraft:diamond` to `fantasy_armor:fantasy` in `assets/fantasy_armor/equipment/fantasy.json`.
+
+To change a texture, edit the PNG in place and keep the same size and layout.
 
 Stats live in `src/main/java/com/kierbob/fantasyarmor/item/FantasyArmorMaterial.java`.
