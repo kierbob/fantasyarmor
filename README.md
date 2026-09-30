@@ -1,7 +1,7 @@
 # Fantasy Armor
 
 A Fabric mod for Minecraft **26.3** that adds a Fantasy Armor set. For now the
-set has the same stats as diamond armor, with amethyst-purple textures.
+set has the same stats as diamond armor, with diamond textures cracked by glowing amethyst.
 
 ## Recipes
 
@@ -25,7 +25,7 @@ from the run's **Artifacts**.
 
 ## Textures
 
-The textures are vanilla diamond, recolored to amethyst purple:
+The textures are vanilla diamond with glowing amethyst cracks drawn in:
 
 - Inventory icons: `src/main/resources/assets/fantasy_armor/textures/item/fantasy_*.png` (16x16)
 - Worn helmet, chestplate and boots: `assets/fantasy_armor/textures/entity/equipment/humanoid/fantasy.png` (64x32)
